@@ -1,0 +1,1371 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>传送门下载 - 官方视频门户 | 精品内容与创作者社区</title>
+<meta name="description" content="传送门下载官方网站，聚焦工具与软件下载领域的原创视频内容社区，为企业与创作者搭建高品质内容生态，持续运营值得信赖的品牌视频门户。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e1b2b'/%3E%3Cpath d='M18 20h22a10 10 0 0 1 0 20H30' stroke='%2338e8b0' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M18 44h12' stroke='%23ffffff' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='46' cy='48' r='5' fill='%2338e8b0'/%3E%3C/svg%3E">
+<style>
+:root{
+  --tp-bg:#0b1220;
+  --tp-panel:#111c2e;
+  --tp-panel-2:#16243a;
+  --tp-line:#213550;
+  --tp-text:#e8f0fa;
+  --tp-muted:#93a7c2;
+  --tp-accent:#38e8b0;
+  --tp-accent-2:#5aa9ff;
+  --tp-warn:#ffcf5c;
+  --tp-radius:16px;
+  --tp-max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--tp-bg);
+  color:var(--tp-text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul,ol{list-style:none}
+
+.tp-wrap{max-width:var(--tp-max);margin:0 auto;padding:0 20px}
+.tp-section{padding:64px 0;scroll-margin-top:132px}
+.tp-section-head{margin-bottom:32px}
+.tp-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;letter-spacing:.16em;color:var(--tp-accent);
+  text-transform:uppercase;margin-bottom:10px;font-weight:600;
+}
+.tp-eyebrow::before{content:"";width:22px;height:2px;background:var(--tp-accent)}
+h2.tp-h2{font-size:clamp(22px,3.2vw,32px);letter-spacing:.01em;line-height:1.3}
+h3.tp-h3{font-size:17px;line-height:1.45;margin-bottom:8px}
+.tp-lead{color:var(--tp-muted);font-size:15px;max-width:720px;margin-top:10px}
+.tp-tag{
+  display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;
+  background:rgba(56,232,176,.1);color:var(--tp-accent);border:1px solid rgba(56,232,176,.28);
+  margin-right:6px;margin-bottom:6px;white-space:nowrap;
+}
+.tp-tag--blue{background:rgba(90,169,255,.1);color:var(--tp-accent-2);border-color:rgba(90,169,255,.3)}
+.tp-tag--warn{background:rgba(255,207,92,.1);color:var(--tp-warn);border-color:rgba(255,207,92,.3)}
+.tp-muted{color:var(--tp-muted)}
+.tp-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  padding:10px 20px;border-radius:10px;font-size:14px;font-weight:600;
+  border:1px solid var(--tp-line);background:var(--tp-panel-2);
+  transition:transform .18s ease,background .18s ease,border-color .18s ease;
+}
+.tp-btn:hover{transform:translateY(-2px);border-color:var(--tp-accent)}
+.tp-btn--primary{background:linear-gradient(120deg,#38e8b0,#2fc7d8);color:#062023;border-color:transparent}
+.tp-btn--ghost{background:transparent}
+.tp-btn--sm{padding:6px 12px;font-size:12.5px;border-radius:8px}
+
+/* ============ 吸顶：公告条 + 页头 ============ */
+.tp-sticky{position:sticky;top:0;z-index:90}
+.tp-announce{
+  background:linear-gradient(90deg,#1b3a4f,#17324a 55%,#1f2f57);
+  border-bottom:1px solid var(--tp-line);
+  font-size:13px;color:#cfe4f5;
+}
+.tp-announce-inner{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  padding:9px 0;
+}
+.tp-announce-label{
+  flex:none;background:var(--tp-accent);color:#062023;font-weight:700;
+  font-size:11.5px;padding:2px 9px;border-radius:6px;letter-spacing:.06em;
+}
+.tp-announce-track{display:flex;gap:22px;flex-wrap:wrap;flex:1;min-width:0}
+.tp-announce-item{display:inline-flex;align-items:center;gap:8px;opacity:.94}
+.tp-announce-item b{color:#fff;font-weight:600}
+.tp-announce time{color:#7fa6c4;font-size:12px}
+
+.tp-header{background:rgba(11,18,32,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--tp-line)}
+.tp-header-inner{display:flex;align-items:center;gap:18px;padding:12px 0}
+.tp-brand{display:flex;align-items:center;gap:10px;flex:none}
+.tp-brand-mark{
+  width:38px;height:38px;border-radius:11px;flex:none;
+  background:radial-gradient(circle at 30% 25%,#3affe0,#1c8f7a 70%);
+  display:grid;place-items:center;color:#04211b;font-weight:800;font-size:17px;
+  box-shadow:0 0 0 1px rgba(56,232,176,.35),0 6px 18px rgba(56,232,176,.18);
+}
+.tp-brand-name{font-size:17px;font-weight:700;letter-spacing:.02em;line-height:1.2}
+.tp-brand-sub{font-size:11px;color:var(--tp-muted);letter-spacing:.12em;text-transform:uppercase}
+.tp-nav{display:flex;gap:4px;margin-left:8px;flex:1;min-width:0;flex-wrap:wrap}
+.tp-nav a{padding:7px 12px;border-radius:8px;font-size:14px;color:#c4d4e6;transition:.16s}
+.tp-nav a:hover{background:var(--tp-panel-2);color:#fff}
+.tp-header-tools{display:flex;align-items:center;gap:10px;flex:none}
+.tp-search{
+  display:flex;align-items:center;gap:6px;background:var(--tp-panel);
+  border:1px solid var(--tp-line);border-radius:10px;padding:6px 10px;
+}
+.tp-search input{
+  background:transparent;border:0;outline:0;color:var(--tp-text);width:150px;font-size:13.5px;
+}
+.tp-search input::placeholder{color:#6d829c}
+.tp-search button{font-size:13px;color:var(--tp-accent);font-weight:600}
+.tp-burger{display:none;width:40px;height:38px;border:1px solid var(--tp-line);border-radius:9px;place-items:center}
+.tp-burger span{display:block;width:17px;height:2px;background:#cfe0f0;position:relative}
+.tp-burger span::before,.tp-burger span::after{content:"";position:absolute;left:0;width:17px;height:2px;background:#cfe0f0}
+.tp-burger span::before{top:-5px}.tp-burger span::after{top:5px}
+.tp-search-feedback{font-size:12px;color:var(--tp-warn);margin-top:6px;display:none}
+
+/* ============ 首屏：左文 右侧大图 + 数据条 ============ */
+.tp-hero{padding:56px 0 40px;background:
+  radial-gradient(900px 420px at 88% -10%,rgba(56,232,176,.14),transparent 60%),
+  radial-gradient(700px 380px at 6% 10%,rgba(90,169,255,.12),transparent 65%);
+}
+.tp-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.tp-hero-badge{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:#a9e9d6;
+  border:1px solid rgba(56,232,176,.32);background:rgba(56,232,176,.08);
+  padding:5px 12px;border-radius:999px;margin-bottom:18px}
+.tp-hero-badge i{width:6px;height:6px;border-radius:50%;background:var(--tp-accent);display:inline-block;animation:tp-pulse 2.2s infinite}
+@keyframes tp-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(1.5)}}
+h1.tp-h1{font-size:clamp(34px,5vw,56px);line-height:1.1;letter-spacing:-.01em;margin-bottom:16px}
+h1.tp-h1 em{font-style:normal;color:var(--tp-accent)}
+.tp-hero-desc{color:#b3c5da;font-size:15.5px;max-width:520px;margin-bottom:22px}
+.tp-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.tp-hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:520px}
+.tp-stat{background:rgba(22,36,58,.7);border:1px solid var(--tp-line);border-radius:12px;padding:12px 14px}
+.tp-stat b{display:block;font-size:21px;color:#fff;letter-spacing:.01em}
+.tp-stat span{font-size:12px;color:var(--tp-muted)}
+.tp-hero-visual{position:relative}
+.tp-hero-visual figure{border-radius:20px;overflow:hidden;border:1px solid #26405f;box-shadow:0 30px 70px -30px rgba(0,0,0,.85)}
+.tp-hero-visual svg{display:block;width:100%;height:auto}
+.tp-hero-float{
+  position:absolute;left:-14px;bottom:18px;background:rgba(10,20,33,.92);backdrop-filter:blur(6px);
+  border:1px solid #2a4a68;border-radius:12px;padding:10px 14px;font-size:12.5px;color:#c9dcf0;
+  display:flex;align-items:center;gap:10px;box-shadow:0 12px 30px -12px #000;
+}
+.tp-hero-float b{color:var(--tp-accent)}
+
+/* ============ 通用卡片 ============ */
+.tp-card{
+  background:linear-gradient(180deg,var(--tp-panel),#0f1a2b);
+  border:1px solid var(--tp-line);border-radius:var(--tp-radius);
+  padding:20px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+  min-width:0;
+}
+.tp-card:hover{transform:translateY(-3px);border-color:#2f5878;box-shadow:0 20px 34px -26px #38e8b0}
+.tp-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.tp-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.tp-grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.tp-meta-row{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--tp-muted);margin-top:12px}
+.tp-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;align-items:center}
+
+/* 焦点大图+文字列表 */
+.tp-focus-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;align-items:start}
+.tp-focus-main figure{border-radius:16px;overflow:hidden;border:1px solid #26405f;margin-bottom:16px}
+.tp-focus-main svg{display:block;width:100%;height:auto}
+.tp-focus-list{display:grid;gap:14px}
+.tp-focus-item{
+  display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start;
+  padding:14px;border:1px solid var(--tp-line);border-radius:12px;background:var(--tp-panel);
+  transition:.18s;
+}
+.tp-focus-item:hover{border-color:#2f5878;background:var(--tp-panel-2)}
+.tp-rank{font-size:18px;font-weight:800;color:#2f5878;font-variant-numeric:tabular-nums;line-height:1.4}
+.tp-focus-item p{font-size:13px;color:var(--tp-muted);margin-top:4px}
+
+/* 视频列表条目 */
+.tp-video-list{display:grid;gap:14px}
+.tp-video-item{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;
+  padding:16px 18px;border:1px solid var(--tp-line);border-radius:14px;background:var(--tp-panel);
+  transition:.18s;
+}
+.tp-video-item:hover{border-color:#2f5878;background:var(--tp-panel-2)}
+.tp-video-item .tp-vtitle{font-size:15.5px;font-weight:600;margin-bottom:4px;display:block}
+.tp-video-item .tp-vsum{font-size:13px;color:var(--tp-muted);max-width:640px}
+.tp-video-stats{display:flex;gap:14px;font-size:12.5px;color:var(--tp-muted);flex-wrap:wrap;margin-top:8px}
+.tp-video-btns{display:flex;gap:8px;flex:none;flex-wrap:wrap;justify-content:flex-end}
+
+/* 点赞/收藏按钮 */
+.tp-like,.tp-save{
+  display:inline-flex;align-items:center;gap:6px;font-size:12.5px;
+  border:1px solid var(--tp-line);border-radius:999px;padding:5px 12px;color:#b9cde0;
+  background:rgba(255,255,255,.02);transition:.16s;
+}
+.tp-like:hover,.tp-save:hover{border-color:var(--tp-accent);color:var(--tp-accent)}
+.tp-like.is-on{color:#ff7d9c;border-color:rgba(255,125,156,.5);background:rgba(255,125,156,.1)}
+.tp-save.is-on{color:var(--tp-warn);border-color:rgba(255,207,92,.5);background:rgba(255,207,92,.1)}
+
+/* 专题 */
+.tp-topic{
+  border:1px solid var(--tp-line);border-radius:14px;background:var(--tp-panel);padding:18px;
+  display:flex;flex-direction:column;gap:10px;min-width:0;transition:.18s;
+}
+.tp-topic:hover{border-color:#2f5878}
+.tp-topic-status{font-size:11.5px;color:var(--tp-accent);letter-spacing:.06em}
+.tp-topic ul{display:grid;gap:7px;margin-top:4px}
+.tp-topic li{font-size:13px;color:#b7c9dc;padding-left:16px;position:relative}
+.tp-topic li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:2px;background:var(--tp-accent-2);opacity:.7}
+
+/* 作者矩阵 */
+.tp-author{
+  border:1px solid var(--tp-line);border-radius:14px;padding:18px;background:var(--tp-panel);
+  display:flex;flex-direction:column;gap:10px;min-width:0;transition:.18s;
+}
+.tp-author:hover{border-color:#2f5878;transform:translateY(-2px)}
+.tp-author-top{display:flex;align-items:center;gap:12px}
+.tp-avatar{
+  width:46px;height:46px;border-radius:50%;flex:none;display:grid;place-items:center;
+  font-weight:700;font-size:17px;color:#04211b;
+}
+.tp-avatar--1{background:radial-gradient(circle at 30% 25%,#8ff7dd,#22a98c)}
+.tp-avatar--2{background:radial-gradient(circle at 30% 25%,#9fd0ff,#3d7fd6);color:#03203d}
+.tp-avatar--3{background:radial-gradient(circle at 30% 25%,#ffe28f,#e0a52f);color:#3a2600}
+.tp-avatar--4{background:radial-gradient(circle at 30% 25%,#ffb0c6,#d15678);color:#3d0016}
+.tp-avatar--5{background:radial-gradient(circle at 30% 25%,#c6b3ff,#7357d8);color:#12003d}
+.tp-author-name{font-size:15px;font-weight:700}
+.tp-author-field{font-size:12px;color:var(--tp-muted)}
+.tp-author p{font-size:13px;color:#a9bccf;line-height:1.7}
+.tp-author-nums{display:flex;gap:16px;font-size:12.5px;color:var(--tp-muted);border-top:1px dashed var(--tp-line);padding-top:10px;margin-top:auto}
+.tp-author-nums b{color:#e8f0fa}
+
+/* 关键词解析 */
+.tp-parse{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:30px;align-items:start}
+.tp-parse-body p{font-size:14.5px;color:#b8cadc;margin-bottom:14px}
+.tp-parse-body h3{margin-top:22px}
+.tp-parse-aside{display:grid;gap:14px;position:relative}
+.tp-fact{border:1px solid var(--tp-line);border-radius:12px;padding:14px 16px;background:var(--tp-panel)}
+.tp-fact b{display:block;font-size:13px;color:var(--tp-accent);margin-bottom:4px}
+.tp-fact p{font-size:12.5px;color:var(--tp-muted)}
+
+/* 榜单 */
+.tp-board{display:grid;gap:16px}
+.tp-board-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.tp-board-tab{
+  font-size:13px;padding:6px 14px;border-radius:999px;border:1px solid var(--tp-line);
+  color:#a9bccf;background:var(--tp-panel);transition:.16s;
+}
+.tp-board-tab.is-active{background:rgba(56,232,176,.14);color:var(--tp-accent);border-color:rgba(56,232,176,.45)}
+.tp-board-row{
+  display:grid;grid-template-columns:38px minmax(0,1fr) auto;gap:14px;align-items:center;
+  padding:13px 16px;border:1px solid var(--tp-line);border-radius:12px;background:var(--tp-panel);
+  transition:.16s;
+}
+.tp-board-row:hover{border-color:#2f5878;background:var(--tp-panel-2)}
+.tp-board-row .tp-board-num{font-size:17px;font-weight:800;color:#2f5878;font-variant-numeric:tabular-nums}
+.tp-board-row .tp-board-title{font-size:14.5px;font-weight:600}
+.tp-board-row .tp-board-sub{font-size:12.5px;color:var(--tp-muted)}
+.tp-board-hot{font-size:12.5px;color:var(--tp-accent);white-space:nowrap}
+
+/* 评论 */
+.tp-comment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.tp-comment{
+  border:1px solid var(--tp-line);border-radius:14px;padding:16px 18px;background:var(--tp-panel);
+  display:flex;flex-direction:column;gap:8px;min-width:0;transition:.18s;
+}
+.tp-comment:hover{border-color:#2f5878}
+.tp-comment-top{display:flex;align-items:center;gap:10px}
+.tp-comment .tp-avatar{width:34px;height:34px;font-size:13px}
+.tp-comment-user{font-size:13.5px;font-weight:600}
+.tp-comment-date{font-size:11.5px;color:var(--tp-muted)}
+.tp-comment p{font-size:13.5px;color:#b8cadc;line-height:1.72}
+.tp-stars{color:var(--tp-warn);font-size:12.5px;letter-spacing:2px}
+.tp-quote{
+  border-left:2px solid var(--tp-accent);padding:4px 0 4px 14px;font-size:13px;
+  color:#9fe8d3;background:rgba(56,232,176,.05);border-radius:0 8px 8px 0;margin-top:6px;
+}
+
+/* 企业动态 */
+.tp-news{display:grid;gap:0}
+.tp-news-item{
+  display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;
+  padding:16px 4px;border-bottom:1px dashed var(--tp-line);align-items:start;
+}
+.tp-news-item:last-child{border-bottom:0}
+.tp-news-date{font-size:12.5px;color:var(--tp-accent);font-variant-numeric:tabular-nums;padding-top:2px}
+.tp-news-item h3{font-size:15px;margin-bottom:4px}
+.tp-news-item p{font-size:13.5px;color:var(--tp-muted)}
+
+/* 合作墙 */
+.tp-partners{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.tp-partner{
+  border:1px solid var(--tp-line);border-radius:12px;padding:16px;background:var(--tp-panel);
+  display:flex;align-items:center;gap:10px;font-size:13.5px;color:#c3d5e7;min-width:0;transition:.16s;
+}
+.tp-partner:hover{border-color:#2f5878;color:#fff}
+.tp-partner i{
+  width:28px;height:28px;border-radius:8px;flex:none;display:grid;place-items:center;
+  font-style:normal;font-size:12px;font-weight:700;color:#04211b;background:linear-gradient(120deg,#38e8b0,#5aa9ff);
+}
+
+/* FAQ */
+.tp-faq{display:grid;gap:10px}
+.tp-faq details{
+  border:1px solid var(--tp-line);border-radius:12px;background:var(--tp-panel);overflow:hidden;
+}
+.tp-faq summary{
+  cursor:pointer;padding:14px 18px;font-size:14.5px;font-weight:600;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+.tp-faq summary::-webkit-details-marker{display:none}
+.tp-faq summary::after{content:"+";color:var(--tp-accent);font-size:18px;font-weight:400;flex:none}
+.tp-faq details[open] summary::after{content:"—"}
+.tp-faq details p{padding:0 18px 16px;font-size:13.5px;color:var(--tp-muted)}
+
+/* 投稿 CTA */
+.tp-cta{
+  border:1px solid rgba(56,232,176,.3);border-radius:18px;padding:30px;
+  background:radial-gradient(600px 240px at 90% 10%,rgba(56,232,176,.18),transparent 60%),var(--tp-panel);
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center;
+}
+.tp-cta h2{font-size:clamp(20px,2.8vw,26px);margin-bottom:8px}
+.tp-cta p{font-size:14px;color:var(--tp-muted);max-width:560px}
+
+/* 页脚 */
+.tp-footer{border-top:1px solid var(--tp-line);background:#080f1a;padding:44px 0 28px;margin-top:20px}
+.tp-footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,minmax(0,1fr));gap:28px;margin-bottom:28px}
+.tp-footer h3{font-size:13px;color:#dbe7f3;margin-bottom:12px;letter-spacing:.04em}
+.tp-footer p,.tp-footer li{font-size:13px;color:#7e93ab;line-height:1.9}
+.tp-footer a:hover{color:var(--tp-accent)}
+.tp-footer-bottom{
+  border-top:1px solid var(--tp-line);padding-top:18px;display:flex;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;font-size:12.5px;color:#6f849c;
+}
+
+/* Toast + 弹窗 */
+.tp-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,18px);
+  background:#1b2d44;border:1px solid #2f5878;color:#e8f0fa;font-size:13.5px;
+  padding:10px 18px;border-radius:10px;opacity:0;pointer-events:none;transition:.24s;z-index:200;
+  box-shadow:0 18px 40px -20px #000;
+}
+.tp-toast.is-show{opacity:1;transform:translate(-50%,0)}
+.tp-modal{
+  position:fixed;inset:0;background:rgba(4,9,16,.72);backdrop-filter:blur(3px);
+  display:none;align-items:center;justify-content:center;padding:20px;z-index:150;
+}
+.tp-modal.is-open{display:flex}
+.tp-modal-box{
+  width:100%;max-width:480px;background:#101c2d;border:1px solid #2a4560;border-radius:16px;
+  padding:24px;position:relative;max-height:86vh;overflow:auto;
+}
+.tp-modal-box h3{font-size:18px;margin-bottom:10px}
+.tp-modal-box p{font-size:13.5px;color:var(--tp-muted);margin-bottom:14px}
+.tp-modal-box label{display:block;font-size:12.5px;color:#a9bccf;margin:12px 0 6px}
+.tp-modal-box input,.tp-modal-box textarea{
+  width:100%;background:#0b1421;border:1px solid #2a4560;border-radius:9px;color:#e8f0fa;
+  padding:9px 12px;font-size:13.5px;font-family:inherit;outline:0;
+}
+.tp-modal-box input:focus,.tp-modal-box textarea:focus{border-color:var(--tp-accent)}
+.tp-modal-close{
+  position:absolute;right:14px;top:12px;font-size:20px;color:#7e93ab;line-height:1;
+}
+.tp-modal-close:hover{color:#fff}
+.tp-share-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.tp-share-row .tp-btn{flex:1;min-width:96px}
+
+/* 回到顶部 */
+.tp-top{
+  position:fixed;right:20px;bottom:26px;width:44px;height:44px;border-radius:12px;
+  background:#16243a;border:1px solid #2f5878;color:var(--tp-accent);font-size:17px;
+  display:grid;place-items:center;opacity:0;pointer-events:none;transition:.22s;z-index:120;
+}
+.tp-top.is-show{opacity:1;pointer-events:auto}
+.tp-top:hover{background:#1d3450}
+
+/* 搜索过滤态 */
+.tp-hidden{display:none !important}
+
+/* 响应式 */
+@media (max-width:1024px){
+  .tp-hero-grid{grid-template-columns:minmax(0,1fr);gap:34px}
+  .tp-hero-stats{max-width:none}
+  .tp-focus-grid{grid-template-columns:minmax(0,1fr)}
+  .tp-parse{grid-template-columns:minmax(0,1fr)}
+  .tp-grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tp-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  .tp-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:#0b1421;border-bottom:1px solid var(--tp-line);
+    flex-direction:column;padding:12px 20px 18px;gap:2px;
+  }
+  .tp-nav.is-open{display:flex}
+  .tp-header-inner{position:relative;flex-wrap:wrap}
+  .tp-burger{display:grid}
+  .tp-header-tools{order:3;width:100%;margin-top:10px}
+  .tp-search{flex:1}
+  .tp-search input{width:100%}
+  .tp-grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tp-comment-grid{grid-template-columns:minmax(0,1fr)}
+  .tp-partners{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tp-video-item{grid-template-columns:minmax(0,1fr)}
+  .tp-video-btns{justify-content:flex-start}
+  .tp-cta{grid-template-columns:minmax(0,1fr)}
+  .tp-news-item{grid-template-columns:minmax(0,1fr);gap:4px}
+  .tp-hero-float{left:8px;bottom:10px;font-size:11.5px}
+  .tp-section{padding:48px 0;scroll-margin-top:158px}
+}
+@media (max-width:560px){
+  .tp-grid-2,.tp-grid-3,.tp-grid-4{grid-template-columns:minmax(0,1fr)}
+  .tp-hero-stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .tp-stat{padding:10px}
+  .tp-stat b{font-size:17px}
+  .tp-announce-track{gap:14px}
+  .tp-footer-grid{grid-template-columns:minmax(0,1fr)}
+  .tp-partners{grid-template-columns:minmax(0,1fr)}
+  h1.tp-h1{font-size:34px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ============ 吸顶区：公告条 + 页头 ============ -->
+<div class="tp-sticky">
+  <div class="tp-announce">
+    <div class="tp-wrap tp-announce-inner">
+      <span class="tp-announce-label">官方发布</span>
+      <div class="tp-announce-track">
+        <span class="tp-announce-item"><b>《传送门下载·年度工具榜单》</b>专题上线，收录 48 款高频软件</span>
+        <span class="tp-announce-item"><b>创作者扶持计划第 6 期</b>开放报名，征集「我的装机第一课」系列视频</span>
+        <span class="tp-announce-item"><b>客户端 4.2.0</b> 更新：新增批量校验与镜像测速 <time>2026-11-20</time></span>
+      </div>
+    </div>
+  </div>
+  <header class="tp-header">
+    <div class="tp-wrap tp-header-inner">
+      <a class="tp-brand" href="#tp-hero">
+        <span class="tp-brand-mark">传</span>
+        <span>
+          <span class="tp-brand-name">传送门下载</span>
+          <span class="tp-brand-sub">Video Portal</span>
+        </span>
+      </a>
+      <nav class="tp-nav" id="tpNav" aria-label="主导航">
+        <a href="#tp-focus">焦点内容</a>
+        <a href="#tp-videos">视频专区</a>
+        <a href="#tp-topics">专题企划</a>
+        <a href="#tp-authors">创作者</a>
+        <a href="#tp-parse">深度解析</a>
+        <a href="#tp-comments">社区口碑</a>
+        <a href="#tp-faq">帮助中心</a>
+      </nav>
+      <div class="tp-header-tools">
+        <div class="tp-search">
+          <input type="search" id="tpSearchInput" placeholder="搜索视频 / 创作者 / 专题" aria-label="站内搜索">
+          <button type="button" id="tpSearchBtn">搜索</button>
+        </div>
+        <button class="tp-btn tp-btn--primary tp-btn--sm" type="button" data-tp-modal="submit">投稿上传</button>
+        <button class="tp-burger" type="button" id="tpBurger" aria-label="展开导航" aria-expanded="false"><span></span></button>
+      </div>
+      <div class="tp-search-feedback" id="tpSearchFeedback"></div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+<!-- ============ S2 品牌首屏：左文 右侧大图 + 数据条 ============ -->
+<section class="tp-hero" id="tp-hero">
+  <div class="tp-wrap tp-hero-grid">
+    <div>
+      <span class="tp-hero-badge"><i></i>传送门下载官方网站 · 持续运营第 9 年</span>
+      <h1 class="tp-h1">传送门下载<em>·</em>让每一次下载都有据可循</h1>
+      <p class="tp-hero-desc">作为深耕软件与工具内容领域的视频品牌，我们把「下载」这件小事拆开讲透：版本差异、安全校验、镜像测速、使用教程，全部以原创高清视频呈现，为创作者与企业搭建值得信赖的内容生态。</p>
+      <div class="tp-hero-actions">
+        <a class="tp-btn tp-btn--primary" href="#tp-videos">观看精品内容</a>
+        <a class="tp-btn tp-btn--ghost" href="#tp-topics">浏览年度专题</a>
+        <a class="tp-btn tp-btn--ghost" href="#tp-parse">了解品牌故事</a>
+      </div>
+      <div class="tp-hero-stats">
+        <div class="tp-stat"><b>3,860<sup style="font-size:12px">+</sup></b><span>原创高清视频</span></div>
+        <div class="tp-stat"><b>1.42<sup style="font-size:12px">亿</sup></b><span>累计播放量</span></div>
+        <div class="tp-stat"><b>126<sup style="font-size:12px">位</sup></b><span>签约创作者</span></div>
+      </div>
+    </div>
+    <div class="tp-hero-visual">
+      <figure>
+        <svg viewBox="0 0 640 440" role="img" aria-label="传送门下载品牌主视觉：深色界面中一扇发光的下载通道，数据流从四个方向汇入">
+          <defs>
+            <linearGradient id="tpG1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#0d1b2c"/><stop offset="1" stop-color="#12283f"/>
+            </linearGradient>
+            <linearGradient id="tpG2" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#38e8b0"/><stop offset="1" stop-color="#5aa9ff"/>
+            </linearGradient>
+            <radialGradient id="tpG3" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0" stop-color="#38e8b0" stop-opacity="0.42"/>
+              <stop offset="1" stop-color="#38e8b0" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="640" height="440" fill="url(#tpG1)"/>
+          <g stroke="#1d3550" stroke-width="1">
+            <path d="M0 110h640M0 220h640M0 330h640M160 0v440M320 0v440M480 0v440" opacity="0.5"/>
+          </g>
+          <circle cx="320" cy="220" r="150" fill="url(#tpG3)"/>
+          <g>
+            <rect x="238" y="120" width="164" height="200" rx="16" fill="#0a1626" stroke="#2c5578" stroke-width="2"/>
+            <rect x="256" y="140" width="128" height="26" rx="6" fill="#16283c"/>
+            <rect x="256" y="176" width="86" height="8" rx="4" fill="#2a4863"/>
+            <rect x="256" y="192" width="112" height="8" rx="4" fill="#213b52"/>
+            <path d="M320 232v56" stroke="url(#tpG2)" stroke-width="7" stroke-linecap="round"/>
+            <path d="M296 272l24 26 24-26" fill="none" stroke="url(#tpG2)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="256" y="298" width="128" height="8" rx="4" fill="#213b52"/>
+          </g>
+          <g fill="none" stroke="url(#tpG2)" stroke-width="2.5" opacity="0.85">
+            <path d="M120 96C180 96 190 140 232 150"/>
+            <path d="M520 96C460 96 450 140 408 150"/>
+            <path d="M120 344C180 344 190 300 232 290"/>
+            <path d="M520 344C460 344 450 300 408 290"/>
+          </g>
+          <g fill="#38e8b0">
+            <circle cx="120" cy="96" r="5"/><circle cx="520" cy="96" r="5"/>
+            <circle cx="120" cy="344" r="5"/><circle cx="520" cy="344" r="5"/>
+          </g>
+          <g fill="#7fb7e0" font-family="monospace" font-size="11" opacity="0.72">
+            <text x="36" y="76">SHA-256 ✓</text>
+            <text x="500" y="76">v4.2.0</text>
+            <text x="36" y="396">MIRROR ×6</text>
+            <text x="500" y="396">24.8 MB/s</text>
+          </g>
+        </svg>
+      </figure>
+      <div class="tp-hero-float">本周新增<strong>校验通过的安装包 312 个</strong>，全部人工复核</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S3 焦点内容：一幅重点大图 + 文字列表 ============ -->
+<section class="tp-section" id="tp-focus">
+  <div class="tp-wrap">
+    <div class="tp-section-head">
+      <span class="tp-eyebrow">Focus · 焦点推荐</span>
+      <h2 class="tp-h2">传送门下载本周焦点：把版本号讲清楚的五支视频</h2>
+      <p class="tp-lead">我们坚持「先看懂、再下载」的选题逻辑。焦点内容由编辑部与签约创作者共同完成，全部为原创正版素材，支持高清回看与章节跳转。</p>
+    </div>
+    <div class="tp-focus-grid">
+      <article class="tp-focus-main tp-card" data-tp-searchable="版本号 安装包 校验 教程 传送门下载">
+        <figure>
+          <svg viewBox="0 0 640 360" role="img" aria-label="焦点视频封面：桌面屏幕上并列三个版本号的安装包窗口，右侧显示校验结果">
+            <defs>
+              <linearGradient id="tpF1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#132840"/><stop offset="1" stop-color="#0a1524"/>
+              </linearGradient>
+            </defs>
+            <rect width="640" height="360" fill="url(#tpF1)"/>
+            <rect x="40" y="44" width="380" height="272" rx="12" fill="#0c1a2b" stroke="#274a68"/>
+            <rect x="40" y="44" width="380" height="34" rx="12" fill="#16293e"/>
+            <circle cx="62" cy="61" r="5" fill="#ff6b81"/><circle cx="80" cy="61" r="5" fill="#ffcf5c"/><circle cx="98" cy="61" r="5" fill="#38e8b0"/>
+            <g>
+              <rect x="64" y="100" width="332" height="54" rx="8" fill="#132438" stroke="#2b5476"/>
+              <text x="82" y="124" fill="#9fe8d3" font-family="monospace" font-size="12">v4.2.0 · stable</text>
+              <rect x="82" y="132" width="180" height="7" rx="3.5" fill="#2a4863"/>
+              <rect x="286" y="112" width="92" height="30" rx="6" fill="#1c6f5a"/>
+              <text x="306" y="131" fill="#c8fff0" font-family="monospace" font-size="11">校验通过</text>
+            </g>
+            <g>
+              <rect x="64" y="168" width="332" height="54" rx="8" fill="#132438" stroke="#2b5476"/>
+              <text x="82" y="192" fill="#9fd0ff" font-family="monospace" font-size="12">v4.1.8 · LTS</text>
+              <rect x="82" y="200" width="140" height="7" rx="3.5" fill="#2a4863"/>
+              <rect x="286" y="180" width="92" height="30" rx="6" fill="#1c4f74"/>
+              <text x="306" y="199" fill="#cbe9ff" font-family="monospace" font-size="11">镜像 ×6</text>
+            </g>
+            <g>
+              <rect x="64" y="236" width="332" height="54" rx="8" fill="#132438" stroke="#2b5476"/>
+              <text x="82" y="260" fill="#ffcf5c" font-family="monospace" font-size="12">v5.0.0-beta · 谨慎</text>
+              <rect x="82" y="268" width="96" height="7" rx="3.5" fill="#2a4863"/>
+              <rect x="286" y="248" width="92" height="30" rx="6" fill="#6b5220"/>
+              <text x="302" y="267" fill="#ffe9b0" font-family="monospace" font-size="11">测试版</text>
+            </g>
+            <g>
+              <rect x="444" y="44" width="156" height="272" rx="12" fill="#101f31" stroke="#274a68"/>
+              <text x="462" y="76" fill="#93a7c2" font-family="monospace" font-size="11">CHECKSUM</text>
+              <rect x="462" y="90" width="120" height="8" rx="4" fill="#2a4863"/>
+              <rect x="462" y="106" width="86" height="8" rx="4" fill="#213b52"/>
+              <text x="462" y="146" fill="#38e8b0" font-family="monospace" font-size="11">✓ SHA-256</text>
+              <rect x="462" y="160" width="120" height="8" rx="4" fill="#2a4863"/>
+              <text x="462" y="200" fill="#38e8b0" font-family="monospace" font-size="11">✓ 数字签名</text>
+              <rect x="462" y="214" width="96" height="8" rx="4" fill="#213b52"/>
+              <text x="462" y="254" fill="#5aa9ff" font-family="monospace" font-size="11">↑ 24.8 MB/s</text>
+              <rect x="462" y="268" width="120" height="30" rx="6" fill="#1b3a4f"/>
+              <text x="486" y="288" fill="#cfe4f5" font-family="monospace" font-size="11">开始下载</text>
+            </g>
+          </svg>
+        </figure>
+        <span class="tp-tag">深度测评</span><span class="tp-tag tp-tag--blue">教程干货</span>
+        <h3 class="tp-h3" style="font-size:20px;margin-top:10px">同一款软件三个版本号，到底该下载哪一个？</h3>
+        <p class="tp-muted" style="font-size:14px">从 stable、LTS 到 beta，我们把发布节奏、兼容风险和回滚成本拆成三张对照表，并用一台真实的旧笔记本现场演示升级全过程。这是传送门下载年度播放量最高的单集，评论区累计 2,700 余条实测反馈。</p>
+        <div class="tp-meta-row">
+          <span>作者：程屿</span><span>时长 18:24</span><span>播放 286.4 万</span><span>点赞 12,840</span><span>收藏 34,219</span>
+        </div>
+        <div class="tp-actions">
+          <button class="tp-btn tp-btn--primary tp-btn--sm" type="button" data-tp-modal="preview">立即观看</button>
+          <button class="tp-like tp-btn--sm" type="button" data-tp-like>♡ 点赞 <span class="tp-like-num">12840</span></button>
+          <button class="tp-save tp-btn--sm" type="button" data-tp-save>☆ 收藏</button>
+          <button class="tp-btn tp-btn--ghost tp-btn--sm" type="button" data-tp-copy>复制链接</button>
+        </div>
+      </article>
+
+      <div class="tp-focus-list">
+        <article class="tp-focus-item" data-tp-searchable="安装包 安全 校验 小白 指南">
+          <span class="tp-rank">01</span>
+          <div>
+            <h3 class="tp-h3" style="font-size:15px">安装包安全检查五步法：从文件名到数字签名</h3>
+            <p>面向零基础用户，逐帧演示如何辨别篡改包、捆绑安装与钓鱼页面。</p>
+            <div class="tp-meta-row"><span>作者：林小满</span><span>播放 96.2 万</span><span>收藏 18,904</span></div>
+          </div>
+        </article>
+        <article class="tp-focus-item" data-tp-searchable="镜像 测速 下载 加速 实测">
+          <span class="tp-rank">02</span>
+          <div>
+            <h3 class="tp-h3" style="font-size:15px">六个镜像站横向测速：同一条件下的真实差距</h3>
+            <p>统一网络环境、统一时间段，连续 30 次采样，给出可复现的测速表格。</p>
+            <div class="tp-meta-row"><span>作者：测速老周</span><span>播放 74.8 万</span><span>收藏 12,336</span></div>
+          </div>
+        </article>
+        <article class="tp-focus-item" data-tp-searchable="装机 第一课 系统 重装 教程">
+          <span class="tp-rank">03</span>
+          <div>
+            <h3 class="tp-h3" style="font-size:15px">我的装机第一课：三台旧电脑的复活记录</h3>
+            <p>创作者扶持计划投稿作品，用一台 2013 年的机器跑完整个流程。</p>
+            <div class="tp-meta-row"><span>作者：苏木工作室</span><span>播放 58.1 万</span><span>收藏 9,772</span></div>
+          </div>
+        </article>
+        <article class="tp-focus-item" data-tp-searchable="版本 回滚 降级 风险 经验">
+          <span class="tp-rank">04</span>
+          <div>
+            <h3 class="tp-h3" style="font-size:15px">降级不是回到过去：版本回滚的三个前置条件</h3>
+            <p>来自企业运维一线的经验分享，附一份可打印的回滚检查清单。</p>
+            <div class="tp-meta-row"><span>作者：郝工</span><span>播放 41.6 万</span><span>收藏 8,150</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S3 视频专区：单列图文列表 ============ -->
+<section class="tp-section" id="tp-videos" style="background:linear-gradient(180deg,rgba(17,28,46,.55),transparent)">
+  <div class="tp-wrap">
+    <div class="tp-section-head">
+      <span class="tp-eyebrow">Videos · 热门视频流</span>
+      <h2 class="tp-h2">传送门下载热门视频：六支正在被反复回看的作品</h2>
+      <p class="tp-lead">按近 30 天完播率与互动率综合排序，涵盖深度测评、教程干货、人物访谈与创作幕后。每条内容均标注作者、时长与互动数据，便于你快速判断是否值得</p>
+    </div>
+    <div class="tp-video-list" id="tpVideoList">
+      <article class="tp-video-item" data-tp-searchable="下载器 客户端 体验 测评 界面">
+        <div>
+          <span class="tp-vtitle">传送门客户端 4.2 上手：界面重做之后，快的不只是好看</span>
+          <p class="tp-vsum">新增多线程调度与断点续传可视化，我们在一台 8 年前的老机器上做了 40 组对照测试。</p>
+          <div><span class="tp-tag">深度测评</span><span class="tp-tag tp-tag--blue">科技前沿</span></div>
+          <div class="tp-video-stats"><span>作者：程屿</span><span>时长 22:07</span><span>播放 128.6 万</span><span>点赞 8,204</span><span>收藏 21,330</span></div>
+        </div>
+        <div class="tp-video-btns">
+          <button class="tp-like" type="button" data-tp-like>♡ <span class="tp-like-num">8204</span></button>
+          <button class="tp-save" type="button" data-tp-save>☆</button>
+          <button class="tp-btn tp-btn--ghost tp-btn--sm" type="button" data-tp-copy>复制链接</button>
+        </div>
+      </article>
+      <article class="tp-video-item" data-tp-searchable="教程 干货 批量 下载 效率">
+        <div>
+          <span class="tp-vtitle">批量任务这样排：一次性管理 60 个下载项的实操流程</span>
+          <p class="tp-vsum">从命名规则到队列优先级，把散乱的手动点击变成可复用的工作流。</p>
+          <div><span class="tp-tag">教程干货</span><span class="tp-tag tp-tag--warn">实用技巧</span></div>
+          <div class="tp-video-stats"><span>作者：林小满</span><span>时长 14:36</span><span>播放 92.3 万</span><span>点赞 6,118</span><span>收藏 17,605</span></div>
+        </div>
+        <div class="tp-video-btns">
+          <button class="tp-like" type="button" data-tp-like>♡ <span class="tp-like-num">6118</span></button>
+          <button class="tp-save" type="button" data-tp-save>☆</button>
+          <button class="tp-btn tp-btn--ghost tp-btn--sm" type="button" data-tp-copy>复制链接</button>
+        </div>
+      </article>
+      <article class="tp-video-item" data-tp-searchable="人物 访谈 创作者 背后 故事">
+        <div>
+          <span class="tp-vtitle">访谈：测速老周和他的 1,200 次网络采样</span>
+          <p class="tp-vsum">一位前运维工程师如何把「测速」做成持续更新的系列片，以及他对数据的执念。</p>
+          <div><span class="tp-tag">人物访谈</span><span class="tp-tag tp-tag--blue">品牌故事</span></div>
+          <div class="tp-video-stats"><span>作者：编辑部</span><span>时长 26:41</span><span>播放 63.9 万</span><span>点赞 5,470</span><span>收藏 9,812</span></div>
+        </div>
+        <div class="tp-video-btns">
+          <button class="tp-like" type="button" data-tp-like>♡ <span class="tp-like-num">5470</span></button>
+          <button class="tp-save" type="button" data-tp-save>☆</button>
+          <button class="tp-btn tp-btn--ghost tp-btn--sm" type="button" data-tp-copy>复制链接</button>
+        </div>
+      </article>
+      <article class="tp-video-item" data-tp-searchable="幕后 创作 剪辑 拍摄 流程">
+        <div>
+          <span class="tp-vtitle">创作幕后：一集 18 分钟测评片是怎么被剪出来的</span>
+          <p class="tp-vsum">脚本分镜、录屏素材管理、字幕校对，三个环节的时间分配被完整公开。</p>
+          <div><span class="tp-tag">创作幕后</span><span class="tp-tag tp-tag--warn">创意</span></div>
+          <div class="tp-video-stats"><span>作者：苏木工作室</span><span>时长 19:12</span><span>播放 47.5 万</span><span>点赞 4,209</span><span>收藏 11,206</span></div>
+        </div>
+        <div class="tp-video-btns">
+          <button class="tp-like" type="button" data-tp-like>♡ <span class="tp-like-num">4209</span></button>
+          <button class="tp-save" type="button" data-tp-save>☆</button>
+          <button class="tp-btn tp-btn--ghost tp-btn--sm" type="button" data-tp-copy>复制链接</button>
+        </div>
+      </article>
+      <article class="tp-video-item" data-tp-searchable="安全 行业 观察 风险 企业">
+        <div>
+          <span class="tp-vtitle">行业观察：下载链路里的三个高风险节点</span>
+          <p class="tp-vsum">从镜像分发的信任模型讲起，给企业与个人各一份可执行的加固建议。</p>
+          <div><span class="tp-tag">行业观察</span><span class="tp-tag tp-tag--blue">知识科普</span></div>
+          <div class="tp-video-stats"><span>作者：郝工</span><span>时长 24:55</span><span>播放 38.2 万</span><span>点赞 3,865</span><span>收藏 10,447</span></div>
+        </div>
+        <div class="tp-video-btns">
+          <button class="tp-like" type="button" data-tp-like>♡ <span class="tp-like-num">3865</span></button>
+          <button class="tp-save" type="button" data-tp-save>☆</button>
+          <button class="tp-btn tp-btn--ghost tp-btn--sm" type="button" data-tp-copy>复制链接</button>
+        </div>
+      </article>
+      <article class="tp-video-item" data-tp-searchable="日常 记录 桌面 整理 习惯">
+        <div>
+          <span class="tp-vtitle">日常记录：一个强迫症的下载文件夹，两年没有乱过</span>
+          <p class="tp-vsum">命名规范、归档周期、过期清理，一套几乎零成本的个人文件秩序。</p>
+          <div><span class="tp-tag">日常记录</span><span class="tp-tag tp-tag--warn">生活方式</span></div>
+          <div class="tp-video-stats"><span>作者：阿棠</span><span>时长 11:08</span><span>播放 55.7 万</span><span>点赞 5,932</span><span>收藏 14,820</span></div>
+        </div>
+        <div class="tp-video-btns">
+          <button class="tp-like" type="button" data-tp-like>♡ <span class="tp-like-num">5932</span></button>
+          <button class="tp-save" type="button" data-tp-save>☆</button>
+          <button class="tp-btn tp-btn--ghost tp-btn--sm" type="button" data-tp-copy>复制链接</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S4 专题企划 ============ -->
+<section class="tp-section" id="tp-topics">
+  <div class="tp-wrap">
+    <div class="tp-section-head">
+      <span class="tp-eyebrow">Series · 专题企划</span>
+      <h2 class="tp-h2">年度专题：传送门下载正在推进的三组企划</h2>
+      <p class="tp-lead">专题由编辑部发起、创作者共创，每一项都有明确的更新节奏与选题边界，欢迎在评论区留下你想看的方向。</p>
+    </div>
+    <div class="tp-grid-3">
+      <article class="tp-topic" data-tp-searchable="年度 榜单 工具 专题">
+        <span class="tp-topic-status">● 更新中 · 已完成 32/48 集</span>
+        <h3 class="tp-h3">《年度工具榜单》</h3>
+        <p class="tp-muted" style="font-size:13.5px">以真实使用时长、稳定性与维护活跃度三项加权，逐期介绍一款高频工具，拒绝一次性堆砌推荐。</p>
+        <ul>
+          <li>第 30 集：截图与标注工具的三种流派</li>
+          <li>第 31 集：本地文件搜索的速度边界</li>
+          <li>第 32 集：跨设备同步的取舍清单</li>
+        </ul>
+        <button class="tp-btn tp-btn--ghost tp-btn--sm" type="button" data-tp-modal="preview">查看专题目录</button>
+      </article>
+      <article class="tp-topic" data-tp-searchable="装机 第一课 新手 系列 报名">
+        <span class="tp-topic-status">● 征集中 · 已收到投稿 214 份</span>
+        <h3 class="tp-h3">《我的装机第一课》</h3>
+        <p class="tp-muted" style="font-size:13.5px">面向新手的系列共创企划，欢迎上传你的第一次系统安装、第一次软件配置的真实记录，入选作品将获得官方推荐位。</p>
+        <ul>
+          <li>投稿要求：原创实拍，时长 3–15 分钟</li>
+          <li>评审维度：真实、清晰、可复现</li>
+          <li>本期主题：旧设备的一次再利用</li>
+        </ul>
+        <button class="tp-btn tp-btn--primary tp-btn--sm" type="button" data-tp-modal="submit">报名参与</button>
+      </article>
+      <article class="tp-topic" data-tp-searchable="安全 白皮书 校验 标准 企划">
+        <span class="tp-topic-status">● 已完结 · 共 12 集</span>
+        <h3 class="tp-h3">《校验白皮书》影像版</h3>
+        <p class="tp-muted" style="font-size:13.5px">把一份 3 万字的内部校验规范拆成 12 支短片，让非技术用户也能理解数字签名与哈希值意味着什么。</p>
+        <ul>
+          <li>第 01 集：哈希值不是密码</li>
+          <li>第 07 集：为什么镜像也需要签名</li>
+          <li>第 12 集：一份可执行的检查清单</li>
+        </ul>
+        <button class="tp-btn tp-btn--ghost tp-btn--sm" type="button" data-tp-modal="preview">回看全季</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S5 创作者矩阵：双列简介 ============ -->
+<section class="tp-section" id="tp-authors" style="background:linear-gradient(180deg,rgba(17,28,46,.55),transparent)">
+  <div class="tp-wrap">
+    <div class="tp-section-head">
+      <span class="tp-eyebrow">Creators · 创作者矩阵</span>
+      <h2 class="tp-h2">传送门下载签约创作者：六位把细节讲透的人</h2>
+      <p class="tp-lead">他们中有前运维工程师、独立剪辑师、企业 IT 负责人，也有刚加入半年的新人。平台提供流量扶持、素材授权与选题共创，让专业内容持续被看见。</p>
+    </div>
+    <div class="tp-grid-2">
+      <article class="tp-author" data-tp-searchable="程屿 测评 科技 创作者">
+        <div class="tp-author-top">
+          <span class="tp-avatar tp-avatar--1">程</span>
+          <div><div class="tp-author-name">程屿</div><div class="tp-author-field">深度测评 · 客户端体验</div></div>
+        </div>
+        <p>前产品经理，擅长把一次软件更新拆成可验证的对照实验。做测评六年，坚持公开测试环境与原始数据，视频里出现的每一台设备都真实存在于他的书桌上。他相信「好看」不是结论，「好用」才是。</p>
+        <div class="tp-author-nums"><span>作品 <b>186</b></span><span>粉丝 <b>42.6 万</b></span></div>
+      </article>
+      <article class="tp-author" data-tp-searchable="林小满 教程 新手 创作者">
+        <div class="tp-author-top">
+          <span class="tp-avatar tp-avatar--2">林</span>
+          <div><div class="tp-author-name">林小满</div><div class="tp-author-field">教程干货 · 新手友好</div></div>
+        </div>
+        <p>计算机专业毕业，做过三年企业培训讲师。她的视频节奏很慢，会把每一步停顿三秒留给观众操作，因此常被弹幕称作「可以跟着按暂停键的教程」。她说自己最大的成就感，是收到「我终于弄懂了」的留言。</p>
+        <div class="tp-author-nums"><span>作品 <b>142</b></span><span>粉丝 <b>35.1 万</b></span></div>
+      </article>
+      <article class="tp-author" data-tp-searchable="测速老周 网络 实测 创作者">
+        <div class="tp-author-top">
+          <span class="tp-avatar tp-avatar--3">周</span>
+          <div><div class="tp-author-name">测速老周</div><div class="tp-author-field">行业观察 · 网络实测</div></div>
+        </div>
+        <p>十年运维老兵，习惯用表格说话。他的系列片几乎不出现花哨转场，全靠采样数据和复现步骤支撑观点。为了保持结果可信，他坚持自建测试环境，拒绝任何形式的赞助植入，也因此被观众称为「最不好看但最有用」。</p>
+        <div class="tp-author-nums"><span>作品 <b>97</b></span><span>粉丝 <b>28.4 万</b></span></div>
+      </article>
+      <article class="tp-author" data-tp-searchable="苏木工作室 幕后 剪辑 创作 团队">
+        <div class="tp-author-top">
+          <span class="tp-avatar tp-avatar--4">苏</span>
+          <div><div class="tp-author-name">苏木工作室</div><div class="tp-author-field">创作幕后 · 影像表达</div></div>
+        </div>
+        <p>三人小团队，负责选题、拍摄与后期全流程。他们偏爱自然光与长镜头，把技术内容拍出了纪录片的质感。工作室有一条不成文的规定：每支片子必须有一个让观众「停下来想一想」的瞬间。</p>
+        <div class="tp-author-nums"><span>作品 <b>64</b></span><span>粉丝 <b>19.8 万</b></span></div>
+      </article>
+      <article class="tp-author" data-tp-searchable="郝工 企业 安全 运维 创作者">
+        <div class="tp-author-top">
+          <span class="tp-avatar tp-avatar--5">郝</span>
+          <div><div class="tp-author-name">郝工</div><div class="tp-author-field">企业运维 · 安全规范</div></div>
+        </div>
+        <p>某制造企业 IT 负责人，白天处理工单，晚上整理素材。他的内容多面向同行，语言克制、案例具体，常用内部规范文档作为脚本骨架。他认为安全不是技术问题，而是流程与习惯的问题。</p>
+        <div class="tp-author-nums"><span>作品 <b>53</b></span><span>粉丝 <b>14.2 万</b></span></div>
+      </article>
+      <article class="tp-author" data-tp-searchable="阿棠 日常 记录 生活 创作者">
+        <div class="tp-author-top">
+          <span class="tp-avatar tp-avatar--1">棠</span>
+          <div><div class="tp-author-name">阿棠</div><div class="tp-author-field">日常记录 · 生活方式</div></div>
+        </div>
+        <p>加入平台半年的新人创作者，本职是插画师。她把下载、整理、归档这些琐碎动作拍成了轻盈的生活切片，意外收获大量共鸣。她的视频里总有一杯凉掉的茶，和一句不太标准的旁白开场白。</p>
+        <div class="tp-author-nums"><span>作品 <b>31</b></span><span>粉丝 <b>9.6 万</b></span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S6 数据榜单 + 图文索引 ============ -->
+<section class="tp-section" id="tp-board">
+  <div class="tp-wrap">
+    <div class="tp-section-head">
+      <span class="tp-eyebrow">Ranking · 数据榜单</span>
+      <h2 class="tp-h2">传送门下载内容榜单：热度、新人、口碑三张表</h2>
+      <p class="tp-lead">榜单每周一更新，统计口径公开透明：热度参考播放与完播率，新人参考成长曲线，口碑参考有效长评比例。</p>
+    </div>
+    <div class="tp-board">
+      <div class="tp-board-tabs" role="tablist" aria-label="榜单切换">
+        <button class="tp-board-tab is-active" type="button" data-tp-board="hot">热度榜</button>
+        <button class="tp-board-tab" type="button" data-tp-board="new">新人榜</button>
+        <button class="tp-board-tab" type="button" data-tp-board="word">口碑榜</button>
+      </div>
+      <div id="tpBoardList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S7 深度解析：关键词解析 800 字以上 ============ -->
+<section class="tp-section" id="tp-parse" style="background:linear-gradient(180deg,rgba(17,28,46,.55),transparent)">
+  <div class="tp-wrap">
+    <div class="tp-section-head">
+      <span class="tp-eyebrow">Insight · 深度解析</span>
+      <h2 class="tp-h2">为什么「传送门下载」值得被认真做成一个视频品牌</h2>
+      <p class="tp-lead">这不是一篇功能说明，而是我们对这个关键词的理解：下载是动作，传送门是承诺，二者之间夹着信任。</p>
+    </div>
+    <div class="tp-parse">
+      <div class="tp-parse-body">
+        <h3 class="tp-h3">一、从动作到信任：传送门下载的用户心理路径</h3>
+        <p>绝大多数人第一次面对「传送门下载」这个词时，脑海里浮现的是一个动作：点击、等待进度条、打开文件。但动作背后其实是一连串判断——这个链接是不是官方的？这个版本号是不是最新的？这个安装包有没有被改动过？我们做过一次小范围问卷，回收的 1,864 份有效样本里，有 71.3% 的受访者承认自己在点击下载前会有"不确定感"，其中女性用户与 45 岁以上用户的比例更高。这说明下载从来不是一个纯粹的技术行为，而是一次信任决策。传送门下载作为一个视频品牌，首先要做的不是教人点按钮，而是把这份不确定感一层层拆开。</p>
+        <p>所以我们的选题会从"文件名为什么不建议改"讲起，一路讲到镜像分发的信任模型。这些内容看起来不性感，却恰好是用户真正卡住的地方。我们把每一支视频都当作一次预演：让观众在真正点击之前，先在视频里经历一遍可能出错的环节。</p>
+        <h3 class="tp-h3">二、版本、镜像与校验：三个必须讲清楚的基础概念</h3>
+        <p>关于版本，我们坚持一个观点：最新不等于最适合。stable 分支追求的是经过验证的稳定，LTS 分支追求的是长期可维护，而 beta 分支存在的意义是暴露问题。这三者对应三类人群，混淆它们才是真正的风险来源。传送门下载在每期视频里都会明确标注版本类型，并给出适用场景，而不是笼统地说"建议更新到最新版"。</p>
+        <p>关于镜像，很多人以为镜像只是"换个地方下载"。实际上，镜像涉及同步延迟、签名一致性与带宽调度三个维度。我们在测速系列里连续采样 30 次，发现同一时段不同镜像的速度差异可以达到 4.7 倍，而同步延迟则直接决定了你拿到的是不是最新构建。这些结论都来自公开可复现的方法，观众可以照着自己的网络环境再测一遍。</p>
+        <p>关于校验，这是最容易被跳过、也最不该被跳过的一步。哈希值的作用不是加密，而是比对：它告诉你文件在传输过程中有没有发生变化。数字签名则更进一步，回答的是"这个文件是不是由声称的作者发布的"。我们在《校验白皮书》影像版里用 12 集把这两个概念讲透，其中第 07 集专门讨论镜像为什么也需要签名——这一集的企业端播放占比高达 43%，说明真实需求一直存在，只是过去缺少合适的内容形态。</p>
+        <h3 class="tp-h3">三、内容生态：创作者、企业与社区如何彼此支撑</h3>
+        <p>一个视频品牌能不能持续，取决于它是否形成了内容生态。传送门下载的做法是把三方拉进同一个循环：创作者提供专业视角与真实案例，企业提供场景与规范需求，社区提供反馈与纠错。我们每个月会从评论区提炼 20 条高频疑问，作为下个月选题池的输入；同时把创作者扶持计划的入选作品放进官方推荐位，让新人有被看见的机会。过去一年，通过这条路径成长起来的创作者有 17 位，其中 5 位已经能稳定产出系列内容。</p>
+        <p>企业端的价值同样清晰。很多中小团队并没有专职的 IT 文档人员，他们需要的不是一份 3 万字的规范，而是几支可以在午休时间看完的短片。我们把内部规范影像化之后，收到了大量来自制造业、教育行业与医疗行业的反馈，这些反馈又反过来丰富了我们的案例库。传送门下载因此不只是一个播放页面，而是一个持续运营的内容枢纽。</p>
+        <h3 class="tp-h3">四、长期主义：我们如何定义这个品牌的下一个五年</h3>
+        <p>未来五年，我们希望传送门下载成为中文互联网上关于"可靠下载"的默认参照点。这意味着三件事：第一，保持选题的独立性与可复现性，不接受影响结论的商业合作；第二，把校验与安全的知识做成长期可检索的资料库，而不是一次性热点；第三，持续扶持新创作者，让不同表达方式都能找到自己的观众。我们相信，品质与口碑不是喊出来的，而是一集一集攒出来的。这也是我们坚持原创、正版、高清这三条底线的原因——它们看起来是成本，实际上是最稳的资产。</p>
+      </div>
+      <aside class="tp-parse-aside">
+        <div class="tp-fact"><b>关键词解析 · 版本类型</b><p>stable 适合日常使用，LTS 适合长期部署，beta 仅建议在可回滚的环境中尝试。</p></div>
+        <div class="tp-fact"><b>关键词解析 · 镜像同步</b><p>同步延迟通常以分钟计，直接影响你获取的是否为最新构建。</p></div>
+        <div class="tp-fact"><b>关键词解析 · 校验流程</b><p>哈希比对 + 数字签名验证，两步都通过才建议安装。</p></div>
+        <div class="tp-fact"><b>关键词解析 · 内容口径</b><p>所有测评公开测试环境，接受社区复现与纠错。</p></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S6 社区口碑：双列短评 + 引用摘录 ============ -->
+<section class="tp-section" id="tp-comments">
+  <div class="tp-wrap">
+    <div class="tp-section-head">
+      <span class="tp-eyebrow">Community · 社区口碑</span>
+      <h2 class="tp-h2">传送门下载的用户评价：来自真实使用场景的八条留言</h2>
+      <p class="tp-lead">我们保留了不同长度、不同立场的声音，包括批评。评价区不做筛选排序，只按时间倒序展示。</p>
+    </div>
+    <div class="tp-comment-grid">
+      <article class="tp-comment">
+        <div class="tp-comment-top"><span class="tp-avatar tp-avatar--2">陈</span><div><div class="tp-comment-user">陈默</div><div class="tp-comment-date">2026-11-18</div></div></div>
+        <div class="tp-stars">★★★★★</div>
+        <p>看完《同一款软件三个版本号》之后，我把自己电脑上的测试版换回了 LTS，第二天就体会到差别——不再莫名其妙弹更新提示。这种把判断依据摊开讲的内容，比单纯给结论有用太多。</p>
+        <div class="tp-quote">"先看懂、再下载"这句话我记住了。</div>
+      </article>
+      <article class="tp-comment">
+        <div class="tp-comment-top"><span class="tp-avatar tp-avatar--3">王</span><div><div class="tp-comment-user">王工 · 制造业 IT</div><div class="tp-comment-date">2026-11-15</div></div></div>
+        <div class="tp-stars">★★★★★</div>
+        <p>《校验白皮书》影像版我们在部门内部分两次看完，第 07 集讲镜像签名那段直接放进了新员工培训。希望后续能出一版适合投屏的横版课件，字幕再大一点会更好。</p>
+      </article>
+      <article class="tp-comment">
+        <div class="tp-comment-top"><span class="tp-avatar tp-avatar--1">李</span><div><div class="tp-comment-user">李知夏</div><div class="tp-comment-date">2026-11-12</div></div></div>
+        <div class="tp-stars">★★★★☆</div>
+        <p>教程节奏对我这种完全的新手很友好，暂停键按了很多次也不觉得累。扣一星是因为部分视频的章节标记不够细，18 分钟的内容只有 3 个章节，回看某一步会有点麻烦。</p>
+        <div class="tp-quote">希望章节能再切细一点，谢谢编辑部。</div>
+      </article>
+      <article class="tp-comment">
+        <div class="tp-comment-top"><span class="tp-avatar tp-avatar--5">赵</span><div><div class="tp-comment-user">赵一鸣</div><div class="tp-comment-date">2026-11-09</div></div></div>
+        <div class="tp-stars">★★★★★</div>
+        <p>测速那期我照着步骤复现了一遍，结果和老周给的表格趋势基本一致，差异在 8% 以内。这种可复现的测评我愿意一直看下去，比那些只给一个"秒下"结论的视频靠谱。</p>
+      </article>
+      <article class="tp-comment">
+        <div class="tp-comment-top"><span class="tp-avatar tp-avatar--4">周</span><div><div class="tp-comment-user">周周</div><div class="tp-comment-date">2026-11-06</div></div></div>
+        <div class="tp-stars">★★★★☆</div>
+        <p>作为刚投稿的新人，最打动我的是编辑真的会逐条回复修改意见，而不是模板化的"感谢参与"。第二支片子被选中进专题的时候，我在办公室差点叫出来。</p>
+      </article>
+      <article class="tp-comment">
+        <div class="tp-comment-top"><span class="tp-avatar tp-avatar--1">吴</span><div><div class="tp-comment-user">吴桐</div><div class="tp-comment-date">2026-11-03</div></div></div>
+        <div class="tp-stars">★★★★★</div>
+        <p>阿棠那个下载文件夹的视频看完就动手整理了，命名规则照搬，两周下来确实没再乱过。没想到一个这么小的习惯能被拍得这么治愈，评论区里大家都在晒自己的文件夹。</p>
+        <div class="tp-quote">原来整理也可以是一种放松。</div>
+      </article>
+      <article class="tp-comment">
+        <div class="tp-comment-top"><span class="tp-avatar tp-avatar--3">郑</span><div><div class="tp-comment-user">郑楠</div><div class="tp-comment-date">2026-10-30</div></div></div>
+        <div class="tp-stars">★★★☆☆</div>
+        <p>内容质量没话说，但客户端 4.2 刚更新那两天我遇到过一次任务队列卡住，重启才好。后来在动态里看到是已知问题并已修复，处理速度还可以，就是希望更新说明能写得更清楚些。</p>
+      </article>
+      <article class="tp-comment">
+        <div class="tp-comment-top"><span class="tp-avatar tp-avatar--2">孙</span><div><div class="tp-comment-user">孙老师</div><div class="tp-comment-date">2026-10-27</div></div></div>
+        <div class="tp-stars">★★★★★</div>
+        <p>我在职校教计算机基础，这两年一直用传送门下载的教程作为课堂补充材料。学生最喜欢的是"我的一课"系列，因为那些作者和他们年纪差不多，讲的东西听得进去。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S7 企业动态 + 合作品牌 ============ -->
+<section class="tp-section" id="tp-news">
+  <div class="tp-wrap">
+    <div class="tp-grid-2">
+      <div>
+        <div class="tp-section-head">
+          <span class="tp-eyebrow">Updates · 企业动态</span>
+          <h2 class="tp-h2">传送门下载官方发布与更新日志</h2>
+          <p class="tp-lead">品牌资讯、产品更新与社区活动，统一在此归档，方便回查。</p>
+        </div>
+        <div class="tp-news">
+          <article class="tp-news-item" data-tp-searchable="客户端 更新 日志 4.2.0">
+            <div class="tp-news-date">2026-11-20</div>
+            <div><h3 class="tp-h3" style="font-size:15px">客户端 4.2.0 正式发布：批量校验与镜像测速</h3>
+            <p>新增多任务批量校验、六镜像自动测速与断点续传可视化，同时优化了低配设备下的内存占用。</p></div>
+          </article>
+          <article class="tp-news-item" data-tp-searchable="创作者 扶持 计划 第六期 报名">
+            <div class="tp-news-date">2026-11-11</div>
+            <div><h3 class="tp-h3" style="font-size:15px">创作者扶持计划第六期开放报名</h3>
+            <p>本期主题为「我的装机第一课」，入选者可获得官方推荐位、素材授权与剪辑指导，报名截止 12 月 10 日。</p></div>
+          </article>
+          <article class="tp-news-item" data-tp-searchable="年度 工具 榜单 专题 上线">
+            <div class="tp-news-date">2026-11-02</div>
+            <div><h3 class="tp-h3" style="font-size:15px">《年度工具榜单》专题页上线</h3>
+            <p>收录 48 款高频工具的长期使用观察，支持按使用场景与维护活跃度筛选，专题将持续更新至年底。</p></div>
+          </article>
+          <article class="tp-news-item" data-tp-searchable="社会责任 公益 数字 素养 课程">
+            <div class="tp-news-date">2026-10-21</div>
+            <div><h3 class="tp-h3" style="font-size:15px">数字素养公益课在四所职校落地</h3>
+            <p>以《校验白皮书》影像版为基础开发的公益课程完成首轮授课，累计覆盖 620 名学生，后续将开放免费申请。</p></div>
+          </article>
+        </div>
+      </div>
+      <div>
+        <div class="tp-section-head">
+          <span class="tp-eyebrow">Partners · 合作品牌</span>
+          <h2 class="tp-h2">与传送门下载一同深耕内容的伙伴</h2>
+          <p class="tp-lead">我们与工具厂商、教育机构与社区组织保持长期合作，共同推进内容品质与用户安全。</p>
+        </div>
+        <div class="tp-partners">
+          <div class="tp-partner"><i>镜</i>镜像云服务联盟</div>
+          <div class="tp-partner"><i>校</i>星桥职业教育</div>
+          <div class="tp-partner"><i>码</i>开源工具社区</div>
+          <div class="tp-partner"><i>安</i>安然数字安全</div>
+        </div>
+        <div class="tp-card" style="margin-top:18px">
+          <h3 class="tp-h3">合作说明</h3>
+          <p class="tp-muted" style="font-size:13.5px">所有合作以内容共创与技术交流为主，不影响测评结论。如希望发起联合专题或投稿合作，可通过下方投稿入口提交资料，我们会在 5 个工作日内回复。</p>
+          <button class="tp-btn tp-btn--ghost tp-btn--sm" type="button" data-tp-modal="submit">发起合作意向</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S7 FAQ ============ -->
+<section class="tp-section" id="tp-faq" style="background:linear-gradient(180deg,rgba(17,28,46,.55),transparent)">
+  <div class="tp-wrap">
+    <div class="tp-section-head">
+      <span class="tp-eyebrow">Help · 帮助中心</span>
+      <h2 class="tp-h2">关于传送门下载的常见问题</h2>
+      <p class="tp-lead">以下问题来自社区高频提问，若有新增疑问，欢迎在评论区留言或通过投稿入口反馈。</p>
+    </div>
+    <div class="tp-faq">
+      <details open>
+        <summary>传送门下载的视频都是原创的吗？</summary>
+        <p>站内标注「原创」的内容均为创作者独立制作或编辑部自制，正版素材均获得授权。若发现疑似搬运内容，可通过举报入口提交，我们会在 3 个工作日内核实处理。</p>
+      </details>
+      <details>
+        <summary>如何参与创作者扶持计划的报名？</summary>
+        <p>点击页面中的「投稿上传」或专题内的「报名参与」，填写作品链接与简介即可。评审维度包括原创性、信息准确度与可复现性，入选结果会在企业动态中公布。</p>
+      </details>
+      <details>
+        <summary>视频里的校验步骤对普通用户有必要吗？</summary>
+        <p>有必要，但可以按风险分级执行。来自官方渠道且网络环境可信时可简化流程；从第三方获取或用于重要设备时，建议完整执行哈希比对与签名验证。</p>
+      </details>
+      <details>
+        <summary>为什么有些内容只在专题里更新，不在首页出现？</summary>
+        <p>专题内容通常成系列推出，首页聚焦单集入口，专题页则保留完整脉络与更新状态，方便系统学习。你可以在专题页订阅更新提醒。</p>
+      </details>
+      <details>
+        <summary>是否支持下载视频离线观看？</summary>
+        <p>部分授权内容支持高清下载，下载入口位于播放页内。创作者原创内容是否开放下载由作者自行决定，我们尊重每位创作者的授权选择。</p>
+      </details>
+      <details>
+        <summary>合作与商务咨询如何联系？</summary>
+        <p>请在投稿入口选择「合作意向」类型，附上机构名称、合作方向与预期时间，我们会转交对应团队跟进。所有合作均以不影响内容独立性为前提。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S7 投稿 CTA ============ -->
+<section class="tp-section" id="tp-join">
+  <div class="tp-wrap">
+    <div class="tp-cta">
+      <div>
+        <h2>把你的一次下载经历，变成别人的参考答案</h2>
+        <p>传送门下载长期征集真实、清晰、可复现的使用记录。无论你是第一次重装系统的新手，还是管理上百台设备的运维，这里都有愿意认真看完的观众。</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="tp-btn tp-btn--primary" type="button" data-tp-modal="submit">上传作品</button>
+        <button class="tp-btn tp-btn--ghost" type="button" data-tp-modal="share">分享本页</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ S8 页脚 ============ -->
+<footer class="tp-footer">
+  <div class="tp-wrap">
+    <div class="tp-footer-grid">
+      <div>
+        <div class="tp-brand" style="margin-bottom:12px">
+          <span class="tp-brand-mark">传</span>
+          <span><span class="tp-brand-name">传送门下载</span><span class="tp-brand-sub">Video Portal</span></span>
+        </div>
+        <p>传送门下载官方网站，专注软件与工具领域的原创视频内容，为创作者与企业搭建高品质内容生态。</p>
+        <p style="margin-top:10px">持续运营中 · 值得信赖的内容品牌</p>
+      </div>
+      <div>
+        <h3>内容板块</h3>
+        <ul>
+          <li><a href="#tp-focus">焦点推荐</a></li>
+          <li><a href="#tp-videos">热门视频</a></li>
+          <li><a href="#tp-topics">专题企划</a></li>
+          <li><a href="#tp-board">数据榜单</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>创作者服务</h3>
+        <ul>
+          <li><a href="#tp-authors">创作者矩阵</a></li>
+          <li><a href="#tp-join">投稿上传</a></li>
+          <li><a href="#tp-news">企业动态</a></li>
+          <li><a href="#tp-faq">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>关于</h3>
+        <ul>
+          <li><a href="#tp-parse">品牌故事</a></li>
+          <li><a href="#tp-comments">社区口碑</a></li>
+          <li><a href="#tp-faq">内容规范</a></li>
+          <li><a href="#tp-hero">返回首页</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tp-footer-bottom">
+      <span>© 2018–2026 传送门下载 版权所有 · 持续运营中</span>
+      <span>内容备案号：视网备 2026-1122 号 · 官方发布</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ 弹窗与提示 ============ -->
+<div class="tp-modal" id="tpModal" aria-hidden="true">
+  <div class="tp-modal-box" role="dialog" aria-modal="true" aria-labelledby="tpModalTitle">
+    <button class="tp-modal-close" type="button" aria-label="关闭" data-tp-close-modal>×</button>
+    <div id="tpModalBody"></div>
+  </div>
+</div>
+<div class="tp-toast" id="tpToast" role="status" aria-live="polite"></div>
+<button class="tp-top" id="tpTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('tpBurger');
+  var nav = document.getElementById('tpNav');
+  if(burger && nav){
+    burger.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        nav.classList.remove('is-open');
+        burger.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* ---------- Toast ---------- */
+  var toast = document.getElementById('tpToast');
+  var toastTimer = null;
+  function showToast(msg){
+    if(!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('is-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('is-show'); }, 2200);
+  }
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('[data-tp-like]');
+    if(likeBtn){
+      var numEl = likeBtn.querySelector('.tp-like-num');
+      var on = likeBtn.classList.toggle('is-on');
+      if(numEl){
+        var base = parseInt(numEl.textContent.replace(/[^0-9]/g,''),10) || 0;
+        numEl.textContent = on ? (base + 1) : Math.max(base - 1, 0);
+      }
+      showToast(on ? '已点赞，感谢你的认可' : '已取消点赞');
+      return;
+    }
+    var saveBtn = e.target.closest('[data-tp-save]');
+    if(saveBtn){
+      var onS = saveBtn.classList.toggle('is-on');
+      saveBtn.textContent = onS ? '★ 已收藏' : '☆';
+      showToast(onS ? '已加入收藏夹' : '已取消收藏');
+      return;
+    }
+    var copyBtn = e.target.closest('[data-tp-copy]');
+    if(copyBtn){
+      copyLink();
+      return;
+    }
+    var openModalBtn = e.target.closest('[data-tp-modal]');
+    if(openModalBtn){
+      openModal(openModalBtn.getAttribute('data-tp-modal'));
+      return;
+    }
+    if(e.target.closest('[data-tp-close-modal]')){ closeModal(); }
+  });
+
+  function copyLink(){
+    var text = '传送门下载 · 原创高清视频与创作者社区';
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){
+        showToast('链接已复制到剪贴板');
+      }).catch(function(){ showToast('复制失败，请手动选择链接'); });
+    }else{
+      showToast('链接已生成，可长按选择复制');
+    }
+  }
+
+  /* ---------- 弹窗 ---------- */
+  var modal = document.getElementById('tpModal');
+  var modalBody = document.getElementById('tpModalBody');
+  var modalTitleId = 'tpModalTitle';
+  var lastFocus = null;
+
+  var templates = {
+    preview: '<h3 id="'+modalTitleId+'">精选内容快速预览</h3>'+
+      '<p>本视频为传送门下载原创高清内容，支持章节跳转与字幕切换。点击下方按钮可在新窗口打开完整播放页（演示环境仅展示提示）。</p>'+
+      '<button class="tp-btn tp-btn--primary" type="button" data-tp-demo-play>开始播放</button>',
+    submit: '<h3 id="'+modalTitleId+'">投稿上传 · 合作意向</h3>'+
+      '<p>请填写基本信息，编辑部会在 5 个工作日内回复。支持原创视频、系列企划与合作提案。</p>'+
+      '<label for="tpFormName">称呼 / 机构名称</label>'+
+      '<input id="tpFormName" type="text" placeholder="例如：苏木工作室">'+
+      '<label for="tpFormLink">作品链接或简介</label>'+
+      '<textarea id="tpFormLink" rows="3" placeholder="简要描述内容方向与更新计划"></textarea>'+
+      '<label for="tpFormType">提交类型</label>'+
+      '<input id="tpFormType" type="text" placeholder="投稿 / 合作 / 反馈">'+
+      '<div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">'+
+      '<button class="tp-btn tp-btn--primary" type="button" data-tp-submit-form>提交</button>'+
+      '<button class="tp-btn tp-btn--ghost" type="button" data-tp-close-modal>取消</button></div>',
+    share: '<h3 id="'+modalTitleId+'">分享传送门下载</h3>'+
+      '<p>把这份内容清单分享给需要的朋友，或复制链接保存到你的收藏。</p>'+
+      '<div class="tp-share-row">'+
+      '<button class="tp-btn" type="button" data-tp-share="wechat">微信</button>'+
+      '<button class="tp-btn" type="button" data-tp-share="weibo">微博</button>'+
+      '<button class="tp-btn" type="button" data-tp-share="qq">QQ</button>'+
+      '<button class="tp-btn tp-btn--primary" type="button" data-tp-copy>复制链接</button>'+
+      '</div>'
+  };
+
+  function openModal(type){
+    if(!modal || !modalBody) return;
+    modalBody.innerHTML = templates[type] || templates.preview;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden','false');
+    lastFocus = document.activeElement;
+    var firstBtn = modalBody.querySelector('button');
+    if(firstBtn) firstBtn.focus();
+  }
+  function closeModal(){
+    if(!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden','true');
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  if(modal){
+    modal.addEventListener('click', function(e){
+      if(e.target === modal) closeModal();
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeModal();
+  });
+
+  document.addEventListener('click', function(e){
+    if(e.target.closest('[data-tp-demo-play]')){
+      closeModal(); showToast('演示环境：播放器将在正式站打开');
+    }
+    if(e.target.closest('[data-tp-submit-form]')){
+      var name = document.getElementById('tpFormName');
+      if(name && !name.value.trim()){
+        showToast('请先填写称呼或机构名称');
+        name.focus();
+        return;
+      }
+      closeModal();
+      showToast('提交成功，我们会尽快回复你');
+    }
+    var shareBtn = e.target.closest('[data-tp-share]');
+    if(shareBtn){
+      var map = {wechat:'微信', weibo:'微博', qq:'QQ'};
+      showToast('已生成' + (map[shareBtn.getAttribute('data-tp-share')] || '') + '分享卡片');
+    }
+  });
+
+  /* ---------- 搜索筛选反馈 ---------- */
+  var searchInput = document.getElementById('tpSearchInput');
+  var searchBtn = document.getElementById('tpSearchBtn');
+  var feedback = document.getElementById('tpSearchFeedback');
+
+  function runSearch(){
+    if(!searchInput) return;
+    var q = searchInput.value.trim().toLowerCase();
+    var items = document.querySelectorAll('[data-tp-searchable]');
+    var hit = 0;
+    items.forEach(function(el){
+      if(!q){ el.classList.remove('tp-hidden'); return; }
+      var text = (el.getAttribute('data-tp-searchable') + ' ' + el.textContent).toLowerCase();
+      if(text.indexOf(q) > -1){ el.classList.remove('tp-hidden'); hit++; }
+      else{ el.classList.add('tp-hidden'); }
+    });
+    if(feedback){
+      if(!q){
+        feedback.style.display = 'none';
+        feedback.textContent = '';
+      }else{
+        feedback.style.display = 'block';
+        feedback.textContent = hit > 0
+          ? '已为你筛选出 ' + hit + ' 条包含「' + searchInput.value.trim() + '」的内容'
+          : '暂未找到「' + searchInput.value.trim() + '」相关内容，试试「校验」「镜像」或「创作者」';
+      }
+    }
+  }
+  if(searchBtn){ searchBtn.addEventListener('click', runSearch); }
+  if(searchInput){
+    searchInput.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); runSearch(); }
+    });
+    searchInput.addEventListener('input', function(){
+      if(searchInput.value.trim() === '') runSearch();
+    });
+  }
+
+  /* ---------- 榜单切换 ---------- */
+  var boardData = {
+    hot: [
+      {t:'同一款软件三个版本号，到底该下载哪一个？', s:'程屿 · 深度测评', h:'286.4 万播放'},
+      {t:'传送门客户端 4.2 上手：界面重做之后', s:'程屿 · 深度测评', h:'128.6 万播放'},
+      {t:'安装包安全检查五步法', s:'林小满 · 教程干货', h:'96.2 万播放'},
+      {t:'批量任务这样排：管理 60 个下载项', s:'林小满 · 教程干货', h:'92.3 万播放'},
+      {t:'六个镜像站横向测速：真实差距', s:'测速老周 · 行业观察', h:'74.8 万播放'}
+    ],
+    'new': [
+      {t:'日常记录：一个强迫症的下载文件夹', s:'阿棠 · 新人创作者', h:'成长 +214%'},
+      {t:'我的装机第一课：旧笔记本复活记录', s:'苏木工作室 · 共创', h:'成长 +186%'},
+      {t:'第一次做测评，我踩过的五个坑', s:'阿棠 · 新人创作者', h:'成长 +152%'},
+      {t:'从零整理一份家庭设备清单', s:'苏木工作室 · 生活', h:'成长 +133%'},
+      {t:'我为什么开始记录每一次下载', s:'阿棠 · 日常记录', h:'成长 +97%'}
+    ],
+    word: [
+      {t:'校验白皮书影像版 · 第 07 集', s:'郝工 · 企业运维', h:'有效长评 92.4%'},
+      {t:'镜像签名的信任模型', s:'测速老周 · 行业观察', h:'有效长评 90.1%'},
+      {t:'访谈：测速老周与 1,200 次采样', s:'编辑部 · 人物访谈', h:'有效长评 88.7%'},
+      {t:'创作幕后：18 分钟测评怎么剪', s:'苏木工作室 · 幕后', h:'有效长评 85.2%'},
+      {t:'给新手的一份回滚检查清单', s:'郝工 · 实用技巧', h:'有效长评 83.6%'}
+    ]
+  };
+
+  var boardList = document.getElementById('tpBoardList');
+  function renderBoard(key){
+    if(!boardList) return;
+    var rows = boardData[key] || boardData.hot;
+    boardList.innerHTML = rows.map(function(item, i){
+      return '<div class="tp-board-row">'+
+        '<span class="tp-board-num">'+(i+1 < 10 ? '0'+(i+1) : (i+1))+'</span>'+
+        '<div><div class="tp-board-title">'+item.t+'</div><div class="tp-board-sub">'+item.s+'</div></div>'+
+        '<span class="tp-board-hot">'+item.h+'</span></div>';
+    }).join('');
+  }
+  renderBoard('hot');
+
+  document.addEventListener('click', function(e){
+    var tab = e.target.closest('[data-tp-board]');
+    if(!tab) return;
+    document.querySelectorAll('.tp-board-tab').forEach(function(b){ b.classList.remove('is-active'); });
+    tab.classList.add('is-active');
+    renderBoard(tab.getAttribute('data-tp-board'));
+  });
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('tpTop');
+  window.addEventListener('scroll', function(){
+    if(!topBtn) return;
+    if(window.scrollY > 600) topBtn.classList.add('is-show');
+    else topBtn.classList.remove('is-show');
+  }, {passive:true});
+  if(topBtn){
+    topBtn.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+})();
+</script>
+</body>
+  </html>
